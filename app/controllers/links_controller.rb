@@ -9,9 +9,13 @@ class LinksController < ApplicationController
 
   def create
   	@link = Link.new(link_params)
+      if @link.save
+        redirect_to root_path
+      else
+        redirect_to new_link_path
+        flash.alert = "Invalid URL"
+      end
 
-  	@link.save
-  	redirect_to @link
   end
 
   private

@@ -1,2 +1,17 @@
 <h2>welcome</h2>
 <%= link_to 'add link', new_link_path %>
+
+<table>
+	<thead>
+		<tr>
+			<td>title</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @links.each do |link| %>
+			<tr>
+				<td><%= link_to link.title, link.url %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
