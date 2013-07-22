@@ -1,4 +1,6 @@
 RedditOnRails::Application.routes.draw do
+	root 'pages#index'
+  get "comments/create"
   get "links/index"
   get "links/show"
   get "links/new"
@@ -6,5 +8,5 @@ RedditOnRails::Application.routes.draw do
   devise_for :users
   resources :pages
   resources :links
-  root 'pages#index'
+  resources :comments
 end
