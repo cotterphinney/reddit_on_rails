@@ -1,4 +1,3 @@
-<h1>Links#show</h1>
 <table>
 	<thead>
 		<tr>
@@ -16,7 +15,12 @@
 
 <div>
   <% @link.comments.each do |comment| %>
-    <p><%= comment.message %></p>
+    <p>
+      <%= comment.message %>
+        <% if current_user.id == comment.user_id %>
+        <%= link_to 'delete', comment, :method=> :delete, :confirm => "Are you sure?" %>
+        <% end %>
+    </p>
   <% end %>
 </div>
 

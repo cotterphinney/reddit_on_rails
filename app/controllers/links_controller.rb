@@ -16,7 +16,6 @@ class LinksController < ApplicationController
         redirect_to new_link_path
         flash.alert = "Invalid URL"
       end
-
   end
 
   private
