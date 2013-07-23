@@ -9,9 +9,10 @@
 	</thead>
 	<tbody>
 		<% @links.each do |link| %>
+		<% comments_number = link.comments.count %>
 			<tr>
 				<td><%= link_to link.title, link.url %></td>
-				<td><%= link_to 'comments', link %>
+				<td><%= link_to 'comments', link %>(<%= comments_number %>)
 			</tr>
 		<% end %>
 	</tbody>
